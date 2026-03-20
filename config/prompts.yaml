@@ -1,0 +1,36 @@
+# LLM提示词模板
+
+# 报告生成提示词
+report_generation: |
+  你是一个专业的股票投资分析师。请根据以下数据生成投资建议报告。
+
+  ## 股票基本信息
+  股票代码: {ticker}
+  当前价格: {current_price}
+  分析日期: {date}
+
+  ## 技术面分析
+  LSTM预测涨跌幅: {lstm_prediction}%
+  RSI指标: {rsi}
+  MACD信号: {macd_signal}
+
+  ## 情绪面分析
+  情感指数: {sentiment_score} (-1到1之间,负值表示悲观,正值表示乐观)
+
+  ## 基本面数据
+  市盈率(PE): {pe_ratio}
+  市净率(PB): {pb_ratio}
+
+  ## 要求
+  1. 综合以上数据,给出操作建议(BUY/SELL/HOLD)
+  2. 给出信心指数(0-100)
+  3. 简要说明理由(不超过100字)
+  4. 指出主要风险(不超过50字)
+
+  请以JSON格式返回:
+  {{
+    "action": "BUY/SELL/HOLD",
+    "confidence": 0-100,
+    "reason": "理由说明",
+    "risk": "风险提示"
+  }}

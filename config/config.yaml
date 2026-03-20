@@ -1,0 +1,61 @@
+# 项目基本信息
+project:
+  name: "Multi-Agent Quant System"
+  version: "1.0.0"
+
+# 股票池配置
+stocks:
+  tickers:
+    - "AAPL"
+    - "MSFT"
+    - "TSLA"
+    - "GOOGL"
+    - "AMZN"
+  start_date: "2020-01-01"
+  end_date: "2025-12-31"
+
+# 数据路径
+paths:
+  data_dir: "data"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  news_dir: "data/news"
+  model_dir: "data/models"
+  cache_dir: "data/cache"
+
+# LSTM模型配置
+model:
+  lstm:
+    input_dim: 158           # Qlib因子数量
+    hidden_dim: 64
+    num_layers: 2
+    dropout: 0.2
+    sequence_length: 20      # 过去20日数据
+    prediction_horizon: 5    # 预测未来5日
+
+# Agent配置
+agent:
+  parallel: true             # 并行调用技术Agent和情绪Agent
+
+# 大模型配置
+llm:
+  provider: "deepseek"
+  model: "deepseek-chat"
+  temperature: 0.3
+  max_tokens: 1000
+
+# 回测配置
+backtest:
+  framework: "backtrader"
+  initial_capital: 100000
+  commission: 0.001
+
+# 信号合成权重
+optimization:
+  weights:
+    technical: 0.5          # 技术面权重
+    sentiment: 0.3          # 情绪面权重
+    fundamental: 0.2        # 基本面权重
+  thresholds:
+    buy: 0.6                # 买入阈值
+    sell: -0.6              # 卖出阈值
