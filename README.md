@@ -58,10 +58,6 @@ multi-agent-quant-system/
 ### 1. 环境配置
 
 ```bash
-# 创建虚拟环境
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
 # 安装依赖
 pip install -r requirements.txt
 ```
@@ -86,17 +82,7 @@ DEEPSEEK_API_KEY=your_api_key_here
 python scripts/download_data.py
 ```
 
-### 4. 训练模型
 
-```bash
-python scripts/train_lstm.py
-```
-
-### 5. 运行应用
-
-```bash
-streamlit run app/main.py
-```
 
 ## 使用说明
 
