@@ -5,11 +5,15 @@ from pathlib import Path
 from typing import List, Dict
 from loguru import logger
 
+# from qlib.contrib.data.handler import Alpha360
+# from qlib.data.dataset import DatasetH
+# from qlib.data.dataset.loader import DataLoader
+
 # Qlib相关导入
 try:
     from qlib.contrib.data.handler import Alpha360
     from qlib.data.dataset import DatasetH
-    from qlib.data.dataset.loader import DataLoaderH
+    from qlib.data.dataset.loader import DataLoader
     logger.info("Qlib导入成功")
 except ImportError:
     logger.warning("Qlib未安装,将使用简化版本")

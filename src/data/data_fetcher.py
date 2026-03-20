@@ -2,7 +2,7 @@
 import yfinance as yf
 import pandas as pd
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Dict
 from datetime import datetime
 from loguru import logger
 
