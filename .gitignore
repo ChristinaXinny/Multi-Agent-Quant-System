@@ -32,6 +32,9 @@ ENV/
 *.swo
 *~
 
+# docs
+docs/noupload/
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
